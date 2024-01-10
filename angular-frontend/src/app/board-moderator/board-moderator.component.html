@@ -1,0 +1,50 @@
+<div class="card card-container form">
+  <h5 class="text-center mt-3">VOITURE/CLIENT</h5>
+  <div style="text-align: center; vertical-align: middle;">
+    <img src="https://media.istockphoto.com/id/1291652750/fr/vectoriel/lhomme-donne-des-clefs-au-client-qui-vient-dacheter-une-voiture.jpg?s=612x612&w=0&k=20&c=hPkKH2VPgoVZiCMdlSJrcNrzl_hN38jpCxxablFa-2o=" style="width: 300px; height: 200px;">
+  </div>
+  <div class="row">
+
+    <div style="margin: 20px">
+      <form [formGroup]="form" class="col s12">
+        <div class="row">
+          <div class="col s12">
+            <img src="https://iconape.com/wp-content/files/iy/369858/svg/id-logo-icon-png-svg.png" style="width: 80px; height: 80px;">
+            <label for="searchClientId">ENTER CLIENT ID</label>
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control" name="searchClientId" formControlName="searchClientId" style="width: 200px;" />
+              <button class="btn btn-primary" (click)="searchClient()">Chercher</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-info table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Client Id</th>
+          <th scope="col">Matricule</th>
+          <th scope="col">Marque</th>
+          <th scope="col">Model</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr scope="row" *ngFor="let product of voitures">
+          <td>{{ product?.id }}</td>
+
+          <td>            <img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" style="width: 80px; height: 80px;">
+            {{ product?.client }}</td>
+          <td>						<img src="https://cdn-icons-png.flaticon.com/512/3774/3774270.png" style="width: 80px; height: 80px;">
+            {{ product?.matricule }}</td>
+          <td>{{ product?.marque}}</td>
+          <td>{{ product?.model }}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

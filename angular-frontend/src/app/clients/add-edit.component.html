@@ -1,0 +1,35 @@
+<div class="card card-container form">
+	<h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Client</h5>
+	<div class="row">
+		<form [formGroup]="form" (ngSubmit)="onSubmit()" class="col s12">
+			<div class="row">
+				<div class="col s12">
+					<label for="name">Name</label> <input type="text" class="form-control" name="name" formControlName="name" />
+					<div class="alert-danger">
+						<div *ngIf="form.controls.name.touched && form.controls.name.errors?.required">* Required</div>
+						<div *ngIf="form.controls.name.touched && form.controls.name.errors?.minlength">Minimum length is {{form.controls.name.errors?.minlength.requiredLength}}
+							and actual is {{form.controls.name.errors?.minlength.actualLength}}</div>
+						<div *ngIf="form.controls.name.touched && form.controls.name.errors?.maxlength">Maximum length is {{form.controls.name.errors?.maxlength.requiredLength}}
+							and actual is {{form.controls.name.errors?.maxlength.actualLength}}</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12">
+					<label for="age">Age</label> <input type="text" class="form-control" name="age" formControlName="age" />
+					<div class="alert-danger">
+						<div *ngIf="form.controls.age.touched && form.controls.age.errors?.required">* Required</div>
+					</div>
+				</div>
+			</div>
+
+			<br />
+			<div class="d-flex gap-2">
+				<a href="#" routerLink="/clients/list" class="btn btn-secondary w-100">Cancel</a>
+				<button class="btn btn-primary w-100" [disabled]="form.pristine || form.invalid">{{ id ? 'Update' : 'Create'}}</button>
+			</div>
+			<div class="alert alert-warning" *ngIf="errorMessage">Failed: {{ errorMessage }}</div>
+		</form>
+	</div>
+</div>

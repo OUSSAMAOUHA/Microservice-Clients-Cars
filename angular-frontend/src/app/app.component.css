@@ -1,0 +1,16 @@
+/* Augmenter la hauteur de la barre de navigation */
+.navbar {
+    height: 120px; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Ajuster la taille des éléments de la barre de navigation */
+.navbar img {
+    width: 100px; /* Ajustez la largeur des images */
+    height: 100px; /* Ajustez la hauteur des images */
+}
+
+/* Facultatif : Augmenter la taille du texte des liens */
+.navbar-nav .nav-link {
+    font-size: 22px; /* Ajustez la taille du texte selon vos préférences */
+    color: black; /* Modifier la couleur du texte en noir */
+}

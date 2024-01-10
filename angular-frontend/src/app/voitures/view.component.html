@@ -1,0 +1,32 @@
+<div class="container">
+	<h5 class="text-center">VOITURE DETAILS</h5>
+	<div class="table-responsive">
+		<table class="table table-bordered p-0 m-0">
+			<tbody>
+				<tr scope="row">
+					<th>ID</th>
+					<td>{{ product?.id }}</td>
+				</tr>
+				<tr scope="row">
+					<th>Matricule</th>
+					<td>{{ product?.matricule }}</td>
+				</tr>
+				<tr scope="row">
+					<th>Marque</th>
+					<td>{{ product?.marque }}</td>
+				</tr>
+				<tr scope="row">
+					<th>Model</th>
+					<td>{{ product?.model }}</td>
+				</tr>
+				<tr scope="row">
+					<th>Client Id</th>
+					<td>{{ product?.client }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="d-flex">
+		<a href="#" routerLink="/voitures/list" class="btn btn-primary mt-2 w-100">Back</a>
+	</div>
+</div>

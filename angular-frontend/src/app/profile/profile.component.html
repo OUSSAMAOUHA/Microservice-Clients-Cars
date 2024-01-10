@@ -1,0 +1,13 @@
+<div class="container" *ngIf="currentUser; else loggedOut">
+	<div>
+		<img src="https://cdn.iconscout.com/icon/free/png-256/free-administrator-6992387-5728885.png">
+		<h6 class="text-muted py-5">
+			<strong>{{ currentUser.displayName }}</strong> Profile
+		</h6>
+	</div>
+	<p>
+		<strong>Email:</strong> {{ currentUser.email }}
+	</p>
+
+</div>
+<ng-template #loggedOut> Please login. </ng-template>

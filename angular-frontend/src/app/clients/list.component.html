@@ -1,0 +1,42 @@
+<div class="container">
+	<h5 class="text-center mt-3">SERVICE CLIENT</h5>
+	<div style="text-align: center; vertical-align: middle;">
+		<img src="https://www.codeur.com/blog/wp-content/uploads/2022/02/Image-a-la-une-tendances-service-client.png" style="width: 300px; height: 200px;">
+	</div>
+	<div style="text-align: center; vertical-align: middle; margin: 20px">
+		<a href="#" routerLink="/clients/add" class="btn btn-outline-primary ms-auto">Add Client</a>
+	</div>
+
+	<div class="d-flex my-2">
+	</div>
+	<div class="table-responsive">
+		<table class="table table-info table-striped">
+
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr scope="row" *ngFor="let product of products">
+					<td style="text-align: center; vertical-align: middle;">
+						<img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" style="width: 80px; height: 80px;">
+					</td>
+					<td>{{ product?.id }}</td>
+          <td>{{ product?.name }}</td>
+          <td>{{ product?.age }}</td>
+          <td><a href="#" [routerLink]="['/clients/', product.id, 'view']" class="btn btn-info m-1">View</a> <a href="#"
+							[routerLink]="['/clients/', product.id, 'edit']" class="btn btn-primary m-1">Edit</a>
+						<button type="button" (click)="openDialog(product.id)" class="btn btn-danger m-1">Delete</button></td>
+				</tr>
+				<tr scope="row" *ngIf="products.length === 0">
+					<td colspan="6" class="text-center">No record found</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

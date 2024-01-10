@@ -1,0 +1,31 @@
+<div id="app">
+	<nav class="navbar navbar-expand-md navbar-dark bg-info">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+				aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav me-auto mb-2 mb-md-0" routerLinkActive="active">
+				<li class="nav-item"> <img src="https://cdn-icons-png.flaticon.com/256/25/25694.png" style="width: 40px; height:40px; "></li>
+				<li class="nav-item" *ngIf="showModeratorBoard"><a href="/mod" class="nav-link" routerLink="mod">DASHBOARD</a></li>
+				<li>-</li>
+				<li class="nav-item"> <img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" style="width: 40px; height:40px; "></li>
+				<li class="nav-item"><a href="/clients/list" class="nav-link" *ngIf="isLoggedIn" routerLink="clients">CLIENTS SERVICE</a></li>
+				<li>-</li>
+				<li class="nav-item"> <img src="https://cdn-icons-png.flaticon.com/512/3774/3774152.png" style="width: 40px; height:40px; "></li>
+				<li class="nav-item" *ngIf="showAdminBoard"><a href="/voitures/list" class="nav-link" *ngIf="isLoggedIn" routerLink="voitures">VOITURE SERVICE</a></li>
+
+			</ul>
+			<ul class="navbar-nav ms-auto  mb-2 mb-md-0" *ngIf="!isLoggedIn">
+				<li class="nav-item"><a href="/login" class="nav-link" routerLink="login">Login</a></li>
+			</ul>
+			<ul class="navbar-nav ms-auto  mb-2 mb-md-0" *ngIf="isLoggedIn">
+				<li class="nav-item"> <img src="https://cdn.iconscout.com/icon/free/png-256/free-administrator-6992387-5728885.png" style="width: 40px; height:40px; "></li>
+				<li class="nav-item"><a href class="nav-link" (click)="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<router-outlet></router-outlet>
+	</div>
+</div>
